@@ -1,0 +1,41 @@
+<script>
+let factdiv = document.createElement("div");
+factdiv.innerHTML=data.fact;
+factDiv.setAttribute("style,color;red;)
+background-color: White;");
+let lengthDiv=document.createElement("div");
+lengthDiv.innerHTML=data.length;
+result.append(factDiv, lengthdiv);
+));
+document.getElementById("btnFact").addEventListener("click",()= {
+    
+<p><button id>"btn fact"> show Facts</button></p>
+    <p> <button id="btnFactAsync">
+      show Fact using Async/Await</button></p>
+    document.getElementById("btnFact").addEventListener("click",()= {
+        fetch("http://catfact.ninja/fact")
+        .then((res))= res.json())
+        .then((data) = {
+            console.log(data);
+            console.log(data.fact);
+            console.log(data.length);
+            //letoutput = '<div> fact; '+ data.fact + '</div>' ;
+            // output += '<div>Length: ' + data.length + '</div>';
+            // console.log(output);
+            //document.getElementById("result").
+
+        }
+        let res= await fetch("https://catfact.ninja/fact")
+        let data=await res,json ();
+        console.log(data);
+        console.log(data.fact)
+        console.log(data.length);
+        //letoutput = '<div> fact; '+ data.fact+ '</div>' ;
+        //output + = '<div>Length ;'+ data.length +'</div>'
+
+        
+
+        
+
+
+</script>

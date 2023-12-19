@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food-project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <a href="#" class="logo"> <i class="fa-solid fa-bowl-food"> </i> VS Food Delight</a>
+            <div class="box">
+                <div class="cart-count">0</div>
+                <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+            </div>
+            <div class="cart ">
+                <div class="cart-title">Cart Items</div>
+                <div class="cart-content">
+                </div>
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">0</div>
+                </div>
+                <button class="btn-buy">Place Order</button>
+                <i class="fa-solid fa-xmark cart-close"></i>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h2 class="title">Discover The Best Food</h2>
+        <div class="shop-content">
+            <div class="food-box">
+                <div class="pic">
+                    <img src="image/briyanijs.jpg" alt="dhosa" class="food-image">
+                </div>
+                <h2 class="food-title">Chicken Briyani</h2>
+                <span class="food-price">Rs.180</span>
+                <i class="fa-solid fa-cart-shopping" id="add-cart"></i>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                    <img src="image/muttom briyani.jpg" alt="dhosa" class="food-image">
+                </div>
+                <h2 class="food-title">Mutton Briyani</h2>
+                <span class="food-price">Rs.250</span>
+                <i class="fa-solid fa-cart-shopping" id="add-cart"></i>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                    <img src="image/parotta.jpg" alt="dhosa" class="food-image">
+                </div>
+                <h2 class="food-title">Parotta</h2>
+                <span class="food-price">Rs.40</span>
+                <i class="fa-solid fa-cart-shopping" id="add-cart"></i>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                    <img src="image/burgerjs.jpg" alt="dhosa" class="food-image">
+                </div>
+                <h2 class="food-title">Ham Burger</h2>
+                <span class="food-price">Rs.100</span>
+                <i class="fa-solid fa-cart-shopping" id="add-cart"></i>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                    <img src="image/pizzajs.jpg" alt="dhosa" class="food-image">
+                </div>
+                <h2 class="food-title">Pizza Combo Of 2</h2>
+                <span class="food-price">Rs.210</span>
+                <i class="fa-solid fa-cart-shopping" id="add-cart"></i>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                    <img src="image/chicken.jpg" alt="dhosa" class="food-image">
+                </div>
+                <h2 class="food-title">Tandoori Chicken</h2>
+                <span class="food-price">Rs.190</span>
+                <i class="fa-solid fa-cart-shopping" id="add-cart"></i>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                    <img src="image/kfcjs.jpg" alt="dhosa" class="food-image">
+                </div>
+                <h2 class="food-title">Crispy Fried Chicken 5pcs</h2>
+                <span class="food-price">Rs.160</span>
+                <i class="fa-solid fa-cart-shopping" id="add-cart"></i>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                    <img src="image/sanveg.jpg" alt="dhosa" class="food-image">
+                </div>
+                <h2 class="food-title">Sandwich</h2>
+                <span class="food-price">Rs.45</span>
+                <i class="fa-solid fa-cart-shopping" id="add-cart"></i>
+            </div>
+            <div class="food-box">
+                <div class="pic">
+                    <img src="image/juice.jpg" alt="dhosa" class="food-image">
+                </div>
+                <h2 class="food-title">Orange Juice</h2>
+                <span class="food-price">Rs.40</span>
+                <i class="fa-solid fa-cart-shopping" id="add-cart"></i>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+ 100 changes: 100 additions & 0 deletions100  
+script.js
+@@ -0,0 +1,100 @@
+    const btnIcon=document.querySelector('#cart-icon');
+const cart=document.querySelector('.cart');
+const btnClose=document.querySelector('.cart-close');
+btnIcon.addEventListener('click',()=>{
+    console.log("clicked")
+    cart.classList.add('cart-active')
+});
+btnClose.addEventListener('click',()=>{
+    cart.classList.remove('cart-active')
+});
+document.addEventListener('DOMContentLoaded',loadFoods);
+function loadFoods(){
+    loadContent();
+}   
+function loadContent(){
+    let btnRemove=document.querySelectorAll('#cart-remove');
+    btnRemove.forEach((btn)=>{
+        btn.addEventListener('click',removeBtn);
+    });
+    let cartAdd=document.querySelectorAll('#add-cart');
+    cartAdd.forEach((cart)=>{
+        cart.addEventListener('click',addCart);
+    });
+    let qtyElements=document.querySelectorAll('.caer-quantity');
+    qtyElements.forEach((input)=>{
+        input.addEventListener('change',changeQty);
+    })
+    updateTotal(); 
+}
+function removeBtn(){
+    if(confirm('Are You Sure To Remove')){
+        let title=this.parentElement.querySelector('.cart-food-title').innerHTML;
+        itemList=itemList.filter(el=>el.title!=title);
+    this.parentElement.remove();
+    loadContent()
+    }
+}
+function changeQty(){
+    if(isNaN(this.value) || this.value<1){
+        this.value=1
+    }
+    loadContent();
+}
+let itemList =[]
+function addCart(){
+    let food=this.parentElement;
+    let title=food.querySelector('.food-title').innerHTML;
+    let price=food.querySelector('.food-price').innerHTML;
+    let imgSrc=food.querySelector('.food-image').src;
+    let newPro={title,price,imgSrc}
+    if(itemList.find((el)=>el.title==newPro.title)){
+        alert('Product Already Added In Cart')
+        return;
+    }else{
+        itemList.push(newPro);
+    }
+    let newProduct=createProduct(title,price,imgSrc);
+    let div=document.createElement('div');
+    div.innerHTML=newProduct;
+    let cartBasket=document.querySelector('.cart-content');
+    cartBasket.append(div);
+    loadContent();
+}
+function createProduct(title,price,imgSrc){
+    return `
+    <div class="cart-box">
+        <img src="${imgSrc}" alt="" class="cart-img">
+        <div class="detail-box">
+            <div class="cart-food-title">${title}</div>
+            <div class="price-box">
+                <div class="cart-price">${price}</div>
+                <div class="cart-amt">${price}</div>
+            </div>
+            <input type="number" value="1" class="caer-quantity">
+        </div>
+        <i class="fa-solid fa-trash" id="cart-remove"></i>
+    </div>
+    `
+}
+function updateTotal(){
+    const cartItem=document.querySelectorAll('.cart-box');
+    const totalValue=document.querySelector('.total-price');
+    let total=0;
+    cartItem.forEach(product=>{
+        let priceElement=product.querySelector('.cart-price');
+        let prices=parseFloat(priceElement.innerHTML.replace("Rs.",""));
+        let qty=product.querySelector('.caer-quantity').value;
+        total+=(prices*qty);
+        product.querySelector('.cart-amt').innerText="Rs."+prices*qty;
+    });
+    totalValue.innerHTML="Rs."+total;
+    const cartCount=document.querySelector('.cart-count');
+    let count=itemList.length;
+    cartCount.innerHTML=count;
+    if(count==0){
+        cartCount.style.display="none";
+    }else{
+        cartCount.style.display="block";
+    }     
+}
+
+<style class="css"></style>
+{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #4b4b4b;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ff4757;
+    z-index: 99;
+}
+.nav{
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.nav a{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+.logo{
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+}
+.box{
+    color: white;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+.cart-count{
+    position: absolute;
+    background-color: #2f3542;
+    top: -9;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    padding: 3px;
+    text-align: center;
+    align-items: center;
+    z-index: 99;
+}
+#cart-icon{
+    font-size: 1.5em;
+    cursor: pointer;
+    padding-top: 10px;
+}
+img{
+    width: 100%;
+}
+.shop-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+    margin: auto;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    max-width: 1200px;
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+}
+h2.title{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+.food-box{
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+    position: relative;
+}
+.pic{
+    overflow: hidden;
+}
+.pic:hover img{
+    transform: scale(1.5);
+}
+.food-image{
+    transition: 0.5s;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.food-title{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ff6348;
+}
+.food-price{
+    font-weight: 500;
+}
+#add-cart{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #2ed573;
+    padding: 10px;
+    color: white;
+    font-size: 1.1rem;
+}
+#add-cart:hover{
+    background-color: red;
+    cursor: pointer;
+}
+.cart{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 350px;
+    height: 100vh;
+    background-color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    box-shadow: 0 1px 4px rgba(40,37,37,0.1);
+    z-index: 100;
+    transition: 0.5s;
+}
+.cart-active{
+    right: 0;
+    transition: 0.5s;
+}
+.cart-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 20px;
+}
+.cart-box{
+
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    padding-bottom: 10px;
+}
+.cart-img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid rgba(0,0,0,0.3);
+    padding: 5px;
+}
+.detail-box{
+    display: grid;
+    row-gap: 0.5rem;
+}
+.price-box{
+    display: flex;
+    justify-content:space-between;
+}
+.cart-food-title{
+    font-size: 1rem;
+    text-transform:uppercase ;
+    font-weight: 500;
+    color: red;
+}
+.cart-price{
+    font-weight: 500;
+}
+.caer-quantity{
+    border: 1px solid rgba(0,0,0,0.3);
+    outline: none;
+    width: 2.4rem;
+    align-items: center;
+    font-size: 1rem;
+}
+#cart-remove{
+    font-size: 22px;
+    color: red;
+    cursor: pointer;
+}
+.total{
+    display: flex;
+    justify-content: end;
+    margin-top: 1.5rem;
+}
+.total-title{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.total-price{
+margin-left: 0.5rem;
+}
+.btn-buy{
+    display: flex;
+    padding: 12px 20px;
+    border: none;
+    background-color: #2f3542;
+    color: white;
+    cursor: pointer;
+}
+.cart-close{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+}
