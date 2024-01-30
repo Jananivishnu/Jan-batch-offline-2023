@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table project</title>
+</head>
+<body>
+    <h1 align="center"><ins>MY RESUME</ins></h1>
+    <table border="0" cellspacing="0" cellpadding="30" width="100%" bgcolor="#d3d3d3">
+        <tr>
+            <td width="50%">
+                <img src="image/vicky.jpg" alt="" width="150">
+            </td>
+            <td align="right" width="50%">
+                V.Janani <br>
+                M.A.Corporate Secretaryship <br>
+                WEB DEVELOPER <br>
+            </td>
+        </tr>
+    </table>
+    <table border="0" cellspacing="0" cellpadding="20" width="100%">
+        <tr>
+            <td width="40%" align="center"><strong>PROJECT</strong></td>
+            <td width="20%" align="center"><strong>ABOUTME</strong></td>
+            <td width="40%" align="center"><strong>CONTACTS</strong></td>
+        </tr>
+    </table>
+    <table border="0" cellspacing="0" cellpadding="10" width="100%">
+        <tr>
+            <td align="center"> <strong>PROJECT/ASSIGNMENT</strong></td>
+        </tr>
+    </table>
+    <table border="0" cellspacing="30" cellpadding="0" widht="100%" align="center">
+            <tr>
+                <td>
+                    <img src="image/developer.jpg" alt="project1" width="360">
+                    <h2 align="center">project 1</h2>
+                    <p align="center">project explanation goes here...</p>
+                </td>
+                <td> 
+                    <img src="image/developer.jpg" alt="project2" width="360">
+                    <h2 align="center">project 2</h2>
+                    <p align="center">project explanation goes here...</p>
+                </td>
+                <td>
+                    <img src="image/developer.jpg" alt="project3" width="360">
+                    <h2 align="center">project 3</h2>
+                    <p align="center">project explanation goes here...</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="0" cellspacing="30" cellpadding="0" widht="100%" align="center">
+        <tr>
+            <td>
+                <img src="image/developer.jpg" alt="project1" width="360">
+                <h2 align="center">project 4</h2>
+                <p align="center">project explanation goes here...</p>
+            </td>
+            <td> 
+                <img src="image/developer.jpg" alt="project2" width="360">
+                <h2 align="center">project 5</h2>
+                <p align="center">project explanation goes here...</p>
+            </td>
+            <td>
+                <img src="image/developer.jpg" alt="project3" width="360">
+                <h2 align="center">project 6</h2>
+                <p align="center">project explanation goes here...</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+     
+    <table border="0" cellspacing="10" cellpadding="10" width="100%" bgcolor="#33FFBD">
+        <tr>
+            <td align="center">
+            <strong> ABOUTME</strong>
+            </td>
+        </tr>
+    </table>
+    <table border="0" cellspacing="50" cellpadding="100" width="100%" bgcolor="#33FFBD">
+        <tr>
+            <td widht="50%" bgcolor="#C27A7B">
+                <ins>PERSONAL DETAILS</ins>
+                <ul>
+                    <li>JANANI.V/li>
+                    <li>01/09/1982</li>
+                    <li>married</li>
+                    <li>K.K.Nagar</li>
+                    <li>PH:9384835104</li>
+                </ul>
+            </td>
+            <td width="50%" bgcolor="#be1558">
+               <ins>HOBBIES</ins>
+                <ol>
+                    <li>readingbooks</li>
+                    <li>Dancing</li>
+                    <li>Listening music</li>
+                    <li>surfing<li>
+                </ol>
+            </td>
+        </tr>
+    </table>
+    <table border="1" cellspacing="0" cellpadding="20" width="100%">
+        <tr>
+            <th>&copy;copyright</th>
+        </tr>
+    </table>    
+</body>
+</html>
